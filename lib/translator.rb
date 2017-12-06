@@ -53,4 +53,16 @@ class Translator
     eng_to_morse(File.read(file).chomp)
   end
 
+  def morse_to_eng(text)
+    require 'pry'; binding.pry
+    code_words = text.split("  ")
+    code_letters = code_words.map do |letter|
+      letter.split(" ")
+    end
+    english_letters = code_letters.map do |letter|
+      letter.map do |code|
+        dictionary.key(code)
+      end
+    end
+  end
 end
