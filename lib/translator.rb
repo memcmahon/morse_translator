@@ -47,4 +47,10 @@ class Translator
       dictionary.fetch(character.downcase)
     end.join
   end
+
+  def from_file(file)
+    # require 'pry'; binding.pry
+    eng_to_morse(File.read(file).chomp)
+  end
+
 end
