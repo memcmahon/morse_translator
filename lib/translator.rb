@@ -9,7 +9,7 @@ class Translator
                     "e" => ".",
                     "f" => "..-.",
                     "g" => "--.",
-                    "h" => "...",
+                    "h" => "....",
                     "i" => "..",
                     "j" => ".---",
                     "k" => "-.-",
@@ -27,7 +27,14 @@ class Translator
                     "w" => ".--",
                     "x" => "-..-",
                     "y" => "-.--",
-                    "z" => "--.."}
+                    "z" => "--..",
+                    " " => " "}
   end
 
+  def eng_to_morse(text)
+    # require 'pry'; binding.pry
+    text.split(//).map do |character|
+      dictionary.fetch(character)
+    end.join
+  end
 end
